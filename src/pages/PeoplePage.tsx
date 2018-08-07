@@ -37,7 +37,7 @@ export default class PeoplePage extends React.Component<NavigationScreenProps, S
   }
 
   componentDidMount(){
-    axios.get("https://randomuser.me/api/?nat=BR&results=5")
+    axios.get("https://randomuser.me/api/?nat=BR&results=15")
       .then(res => {
         const {results} = res.data;
         this.setState({
@@ -55,7 +55,7 @@ export default class PeoplePage extends React.Component<NavigationScreenProps, S
   render() {
     return (
       <View>
-        <PeopleList 
+        <PeopleList
           peoples={this.state.peoples}
           onPressItem={this.navigationToPeopleDetail}/>
       </View>
